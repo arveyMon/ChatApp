@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, StyleSheet, TextInput, View} from 'react-native';
 
 type props = {
-  onSend: (text: String) => void;
+  onSend: (text: string) => void;
 };
 
 export default function ChatInput({onSend}: props) {

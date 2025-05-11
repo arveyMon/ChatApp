@@ -1,11 +1,11 @@
 export enum Sender {
-    User = 'User',
-    Bot = 'Bot'
+  User = 'User',
+  Bot = 'Bot',
 }
 
 export type Message = {
-    id : String;
-    text: String;
-    from: Sender;
-    timeStamp: number;
-}
+  id: string;
+  text: string;
+  from: Sender;
+  timeStamp: number;
+};

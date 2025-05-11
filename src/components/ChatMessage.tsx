@@ -1,17 +1,36 @@
+// ChatMessage.tsx
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Sender, Message} from '../types/message';
+import {Text, View, StyleSheet} from 'react-native';
+import {Message, Sender} from '../types/message';
 
 type Props = {
   message: Message;
 };
 
 export default function ChatMessage({message}: Props) {
-  const isUSer = message.from === Sender.User;
-
-  return <View style={[]}></View>;
+  return (
+    <View
+      style={[
+        styles.messageContainer,
+        message.from === Sender.User ? styles.user : styles.bot,
+      ]}>
+      <Text testID={`message-text-${message.from}`}>{message.text}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  messageContainer: {
+    marginVertical: 4,
+    padding: 8,
+    borderRadius: 8,
+  },
+  user: {
+    alignSelf: 'flex-end',
+    backgroundColor: '#DCF8C6',
+  },
+  bot: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#EEE',
+  },
 });
